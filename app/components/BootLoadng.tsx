@@ -13,7 +13,7 @@ const DETECT_LINES: { text: string; delay: number }[] = [
   { text: "Detecting Primary Slave  ... Skills CD-ROM", delay: 1000 },
   { text: "Detecting Secondary Master ... None", delay: 400 },
   { text: "", delay: 200 },
-  { text: "Loading Heshan 2000 ...", delay: 600 },
+  { text: "Loading Windows 2000 ...", delay: 600 },
 ];
 
 export function BootLoading() {
@@ -22,15 +22,15 @@ export function BootLoading() {
   const [date, setDate] = useState("");
 
   function formatBiosDate(d: Date) {
-  const mm = String(d.getMonth() + 1).padStart(2, "0"); // months start at 0
-  const dd = String(d.getDate()).padStart(2, "0");
-  const yy = String(d.getFullYear()).slice(-2);
-  return `${mm}/${dd}/${yy}`;
-}
- useEffect(() => {
+    const mm = String(d.getMonth() + 1).padStart(2, "0"); // months start at 0
+    const dd = String(d.getDate()).padStart(2, "0");
+    const yy = String(d.getFullYear()).slice(-2);
+    return `${mm}/${dd}/${yy}`;
+  }
+  useEffect(() => {
     setDate(formatBiosDate(new Date()));
   }, []);
-  
+
   useEffect(() => {
     const reduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
